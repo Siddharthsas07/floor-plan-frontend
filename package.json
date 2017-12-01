@@ -1,0 +1,34 @@
+{
+  "name": "color-app",
+  "version": "1.0.0",
+  "description": "Color App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siddharthsas07/color-app.git"
+  },
+  "author": "Siddharth Shah",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.8",
+    "protractor": "^4.0.9"
+  },
+  "bugs": {
+    "url": "https://github.com/Siddharthsas07/color-app/issues"
+  },
+  "homepage": "https://github.com/Siddharthsas07/color-app#readme",
+  "dependencies": {
+    "angular-file-upload": "^2.5.0",
+    "angular-smart-table": "^2.1.9",
+    "ng-file-upload": "^12.2.13"
+  }
+}

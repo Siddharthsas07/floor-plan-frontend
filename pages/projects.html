@@ -1,0 +1,77 @@
+<div>
+
+    <button type="button" ng-click="showAddProjectForm = !showAddProjectForm"
+            class="btn btn-sm btn-success">
+        {{buttonToggleText}}
+    </button>
+
+    <form ng-show="showAddProjectForm" class="form-inline" ng-submit="addProject()">
+        <label class="sr-only" for="inlineFormInput" >Project Name</label>
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput"
+               placeholder="Jane Doe" ng-model="projectName">
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+        <thead>
+            <tr>
+                <th st-sort="projectName">Projects Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in results" st-select-mode="single">
+                <td ng-click="getFloorPlans(row)">{{row.projectName}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div ng-show="floorPlanRequested">
+        <h1>Floor Plans for Project : {{selectedProject}}</h1>
+
+        <button type="button" ng-click="showUploadFloorForm = !showUploadFloorForm" class="btn btn-sm btn-success">
+            {{buttonToggleTextFloor}}
+        </button>
+
+        <form ng-show= "showUploadFloorForm" ng-submit="uploadFile()">
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="file" ng-file-select="onFileSelect($files)">
+                    <div class="progress" style="margin-top: 20px;">
+                        <div class="progress-bar" progress-bar="uploadProgress" role="progressbar">
+                            <span ng-bind="uploadProgress"></span>
+                            <span>%</span>
+                        </div>
+                    </div>
+
+                    <button button type="submit" class="btn btn-default btn-lg">
+                        <i class="fa fa-cloud-upload"></i>
+                        &nbsp;
+                        <span>Upload File</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <table ng-show="floorResults.length" st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+            <thead>
+            <tr>
+                <th>File Name</th>
+                <th>File Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in floorResults">
+                <td>{{row.fileName}}</td>
+                <td>{{row.type}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div ng-show = "!floorResults.length">
+            No floorPlans uploaded for project {{selectedProject}}
+        </div>
+    </div>
+
+
+</div>
