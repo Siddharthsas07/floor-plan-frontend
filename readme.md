@@ -20,3 +20,5 @@ This opens index.html with local server (localhost -> localhost:8080/index.html#
 
 Another way is to use 'brackets' editor. Download brackets and open folder in it.
 Go to index.htm file and click on 'flash' like symbol on top right corner.
+
+![alt text](https://github.com/Siddharthsas07/floor-plan-frontend/blob/master/example.JPG)
